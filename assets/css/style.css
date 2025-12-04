@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary--color: #00008b;
+  --secondary--color: #d3d3d3;
+  --background--color: white;
+  --foreground--color: black;
+  --spacing: 0.25rem;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  width: 1200px;
+  max-width: calc(100% - 12rem);
+  margin: 0 auto; /* center the container by use margin top and bottom 0 and left and right auto*/
+}
+
+a {
+  text-decoration: none; /* remove the underline of the link*/
+}
+
+/* ================================ Header ================================ */
+
+.header {
+  background-color: var(--primary--color);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 10);
+}
+
+.header__link {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--secondary--color);
+  padding: 20px 0;
+}
+
+.header__link:hover {
+  color: var(--background--color);
+}
+
+.header__link--active {
+  color: var(--background--color);
+}
+
+.header__logo {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--background--color);
+  padding: 20px 0;
+}
+
+/* ================================ Main ================================ */
+.main {
+  margin-top: 120px;
+  margin-bottom: 80px;
+}
+
+.course__item {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 10);
+  border: 2px solid var(--foreground--color);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.courses__img {
+  width: 300px;
+  height: 212px;
+  object-fit: cover;
+}
