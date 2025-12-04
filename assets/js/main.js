@@ -14,8 +14,25 @@ document.querySelectorAll(".header__link").forEach((link) => {
 document.addEventListener("DOMContentLoaded", function () {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".header__link").forEach((link) => {
-    const linkPage = link.getAttribute("href").split("/").pop();
-    if (linkPage === currentPage) {
+    const linkHref = link.getAttribute("href");
+    const linkPage = linkHref.split("/").pop();
+    
+    let isActive = false;
+    
+    // Check if it's index or baigiang pages for "Bài giảng"
+    if (linkPage === "index.html" && (currentPage === "index.html" || currentPage.startsWith("baigiang"))) {
+      isActive = true;
+    }
+    
+    else if (linkPage === "homework.html" && currentPage === "homework.html") {
+      isActive = true;
+    }
+
+    else if (linkPage === "exam.html" && currentPage === "exam.html") { 
+      isActive = true;
+    }
+
+    if (isActive) {
       link.classList.add("header__link--active");
     } else {
       link.classList.remove("header__link--active");
